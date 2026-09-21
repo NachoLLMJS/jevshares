@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171513">
+  <meta name="theme-color" content="#0b0e11">
   <meta name="description" content="JevShares routes creator fees into a Flap vault and lets Jev select an approved holder distribution policy with an auditable reasoning trail.">
   <title>JevShares — Creator fees, allocated with evidence</title>
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -138,7 +141,7 @@
           <div><span>02</span><p><strong>On-chain result</strong>The selected policy and epoch state are recorded by the vault.</p></div>
           <div><span>03</span><p><strong>Reasoning reference</strong>The decision can be linked to its published IPFS proof.</p></div>
         </div>
-        <a class="text-link dark" href="https://docs.flap.sh/flap/developers/preview/flap-ai-oracle" target="_blank" rel="noreferrer">Read the Flap AI Oracle specification <span>↗</span></a>
+        <a class="text-link dark" href="https://docs.flap.sh/flap/developers/preview/flap-ai-oracle" target="_blank" rel="noopener noreferrer">Read the Flap AI Oracle specification <span>↗</span></a>
       </div>
     </section>
 
@@ -162,7 +165,7 @@
               <div class="metric"><span>Your claimable</span><strong>—</strong><small>BNB</small></div>
               <div class="metric"><span>Eligible supply</span><strong>—</strong><small>JEVS</small></div>
             </div>
-            <div class="vault-empty"><div class="empty-signal"><i></i><i></i><i></i></div><div><strong>Connect to read the vault</strong><p>Wallet connection reveals your holder position, current epoch, and claimable allocation. No transaction is requested.</p></div><button class="button button-dark secondary-connect" type="button">Connect wallet</button></div>
+            <div class="vault-empty"><div class="empty-signal"><i></i><i></i><i></i></div><div><strong>Connect your account context</strong><p>Contract reads are not integrated in this release. Connecting establishes the wallet and network context only; balances, epoch state, and claim data remain unavailable.</p></div><button class="button button-dark secondary-connect" type="button">Connect wallet</button></div>
           </div>
           <div class="vault-panel" id="panel-decisions">
             <div class="panel-title"><div><span>DECISION LEDGER</span><h3>One verifiable record per epoch.</h3></div><span class="epoch-badge">Awaiting vault</span></div>
@@ -189,7 +192,7 @@
   <footer>
     <a class="brand footer-brand" href="#top"><svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 7h13v19c0 7-4 11-11 11H7"/><path d="M28 7v12c0 8 3 14 9 18"/><circle cx="35" cy="8" r="3"/></svg><span>Jev<span>Shares</span></span></a>
     <p>AI-directed creator-fee distribution through Flap vault infrastructure.</p>
-    <div class="footer-links"><a href="#mechanism">Mechanism</a><a href="#proof">Proof</a><a href="https://docs.flap.sh/" target="_blank" rel="noreferrer">Flap docs ↗</a></div>
+    <div class="footer-links"><a href="#mechanism">Mechanism</a><a href="#proof">Proof</a><a href="https://docs.flap.sh/" target="_blank" rel="noopener noreferrer">Flap docs ↗</a></div>
     <small>JevShares is an independent product interface built for Flap infrastructure. Contract-derived values remain unavailable until verified deployment addresses are configured.</small>
   </footer>
 

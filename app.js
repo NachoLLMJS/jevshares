@@ -110,11 +110,7 @@
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       await ensureChain(window.ethereum);
       renderAccount(accounts[0] || '');
-      if (!config.vaultAddress) {
-        notify('Wallet connected. Vault reads remain locked until the verified deployment is configured.');
-      } else {
-        notify('Wallet connected. Loading the verified vault…');
-      }
+      notify('Wallet connected. This release establishes account and network context only; contract reads remain disabled.');
     } catch (error) {
       const message = error && error.code === 4001 ? 'Wallet request cancelled.' : 'Unable to connect or switch to BNB Chain.';
       notify(message);
