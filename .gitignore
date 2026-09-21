@@ -1,0 +1,22 @@
+# Local deployment state
+.vercel/
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and logs
+node_modules/
+*.log
+
+# Local QA artifacts
+qa/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

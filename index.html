@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171513">
+  <meta name="description" content="JevShares routes creator fees into a Flap vault and lets Jev select an approved holder distribution policy with an auditable reasoning trail.">
+  <title>JevShares — Creator fees, allocated with evidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="JevShares home">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 7h13v19c0 7-4 11-11 11H7"/><path d="M28 7v12c0 8 3 14 9 18"/><circle cx="35" cy="8" r="3"/></svg>
+      <span>Jev<span>Shares</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#mechanism">Mechanism</a>
+      <a href="#policies">Policies</a>
+      <a href="#proof">Proof</a>
+      <a href="#vault">Vault</a>
+    </nav>
+    <button class="wallet-button" id="connectWallet" type="button"><span class="wallet-dot"></span><span id="walletLabel">Connect wallet</span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-art hero-lettering-art" aria-hidden="true">
+        <div class="lettering-grid"></div>
+        <svg class="distribution-routes" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <path class="route route-a" d="M760 475 C930 475 935 210 1110 210 S1350 130 1570 130"/>
+          <path class="route route-b" d="M760 475 C970 475 1000 455 1190 455 S1410 390 1570 390"/>
+          <path class="route route-c" d="M760 475 C935 475 980 700 1160 700 S1370 760 1570 760"/>
+          <circle cx="760" cy="475" r="12" class="route-origin"/>
+          <circle cx="1110" cy="210" r="7" class="node node-a"/>
+          <circle cx="1190" cy="455" r="7" class="node node-b"/>
+          <circle cx="1160" cy="700" r="7" class="node node-c"/>
+          <circle cx="1465" cy="130" r="4" class="node node-a"/>
+          <circle cx="1480" cy="390" r="4" class="node node-b"/>
+          <circle cx="1460" cy="760" r="4" class="node node-c"/>
+        </svg>
+        <div class="custom-lettering">
+          <span class="lettering-top">Jev</span>
+          <span class="lettering-bottom">Shares</span>
+          <span class="lettering-cut">SPLIT / PROVE / CLAIM</span>
+        </div>
+        <div class="lettering-key"><span>01 / FEES</span><span>02 / JEV</span><span>03 / HOLDERS</span></div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span>Flap vault infrastructure</span><span>AI-directed allocation</span></div>
+        <h1>Creator fees,<br><em>allocated with evidence.</em></h1>
+        <p class="hero-lead">JevShares routes creator revenue into a Flap vault. Jev evaluates each epoch, selects one transparent distribution policy, and leaves a verifiable reasoning trail for holders.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#vault">Open the vault <span>↘</span></a>
+          <a class="text-link" href="#mechanism">See how Jev decides <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-status">
+        <div><span class="status-light"></span>System architecture</div>
+        <strong>Flap Vault × Jev</strong>
+        <small>Execution activates after verified contract binding.</small>
+      </div>
+    </section>
+
+    <section class="statement reveal" id="mechanism">
+      <div class="statement-index">01 / THE MECHANISM</div>
+      <h2>Not a black box.<br>A bounded decision system.</h2>
+      <p>Jev cannot invent a destination, rewrite the rules, or move funds to an arbitrary wallet. The agent selects from holder-first policies published by the vault. The contract verifies the choice, records the epoch, and makes the resulting holder allocation claimable.</p>
+    </section>
+
+    <section class="flow-section">
+      <div class="flow-line" aria-hidden="true"></div>
+      <article class="flow-step reveal">
+        <span class="flow-number">01</span>
+        <div class="flow-icon income-icon"><span></span><span></span><span></span></div>
+        <div><p class="micro">RECEIVE</p><h3>Fees enter the vault</h3><p>Creator fees settle into one visible pool. Revenue is never counted as distributed until the vault records a completed allocation.</p></div>
+      </article>
+      <article class="flow-step reveal">
+        <span class="flow-number">02</span>
+        <div class="flow-icon agent-icon"><span>J</span></div>
+        <div><p class="micro">REASON</p><h3>Jev evaluates the epoch</h3><p>The agent reads the permitted inputs, compares the approved policies, and returns one bounded choice through the AI oracle.</p></div>
+      </article>
+      <article class="flow-step reveal">
+        <span class="flow-number">03</span>
+        <div class="flow-icon split-icon"><i></i><i></i><i></i></div>
+        <div><p class="micro">ALLOCATE</p><h3>Holders receive their share</h3><p>The selected weights become the epoch ledger. Eligible holders claim from the vault without trusting an off-chain payout spreadsheet.</p></div>
+      </article>
+    </section>
+
+    <section class="policies-section" id="policies">
+      <div class="section-heading reveal">
+        <div><p class="micro">JEV'S APPROVED CHOICES</p><h2>Three ways to share.<br>One rule: holders first.</h2></div>
+        <p>Jev selects the policy. The policy defines how the holder pool is weighted—never where the money can escape.</p>
+      </div>
+
+      <div class="policy-workbench reveal">
+        <div class="policy-tabs" role="tablist" aria-label="Allocation policies">
+          <button class="policy-tab active" data-policy="steady" role="tab" aria-selected="true"><span>01</span>Steady</button>
+          <button class="policy-tab" data-policy="loyalty" role="tab" aria-selected="false"><span>02</span>Loyalty</button>
+          <button class="policy-tab" data-policy="participation" role="tab" aria-selected="false"><span>03</span>Participation</button>
+        </div>
+        <div class="policy-stage">
+          <div class="policy-copy">
+            <p class="policy-kicker" id="policyKicker">Balanced default</p>
+            <h3 id="policyTitle">Steady distribution</h3>
+            <p id="policyDescription">Prioritizes broad holder coverage while reserving additional weight for long-term and active participants.</p>
+            <div class="policy-reason"><span>WHEN JEV MAY CHOOSE IT</span><p id="policyReason">Normal market conditions, stable holder composition, and no unusual participation imbalance.</p></div>
+          </div>
+          <div class="allocation-visual" aria-label="Policy allocation chart">
+            <div class="allocation-orbit">
+              <div class="allocation-core">JEV<small>SELECTS</small></div>
+              <div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div>
+            </div>
+            <div class="allocation-bars">
+              <div class="allocation-row"><div><span class="legend broad"></span>All eligible holders</div><strong id="broadValue">70%</strong><i><b id="broadBar" style="width:70%"></b></i></div>
+              <div class="allocation-row"><div><span class="legend loyal"></span>Long-term holders</div><strong id="loyalValue">20%</strong><i><b id="loyalBar" style="width:20%"></b></i></div>
+              <div class="allocation-row"><div><span class="legend active"></span>Active participants</div><strong id="activeValue">10%</strong><i><b id="activeBar" style="width:10%"></b></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="policy-footer"><span>Weights apply inside the holder pool</span><span>Policy total <strong>100%</strong></span><span>External destinations <strong>0</strong></span></div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof">
+      <div class="agent-portrait reveal"><img src="assets/jev-agent.webp" width="900" height="900" alt="Abstract glass and ceramic Jev intelligence core"><div class="portrait-label"><span>JEV / ALLOCATION AGENT</span><strong>Bounded intelligence.<br>Public decisions.</strong></div></div>
+      <div class="proof-copy reveal">
+        <p class="micro">AUDIT THE DECISION, NOT THE BRAND</p>
+        <h2>Every choice<br>comes with a receipt.</h2>
+        <p>JevShares is designed around Flap AI Oracle's commit-and-reveal flow. A request is committed on-chain, Jev returns one valid policy index, and the result points to an IPFS reasoning record containing the model inputs and output.</p>
+        <div class="proof-list">
+          <div><span>01</span><p><strong>Bounded output</strong>The agent returns one policy choice, not an unrestricted transaction.</p></div>
+          <div><span>02</span><p><strong>On-chain result</strong>The selected policy and epoch state are recorded by the vault.</p></div>
+          <div><span>03</span><p><strong>Reasoning reference</strong>The decision can be linked to its published IPFS proof.</p></div>
+        </div>
+        <a class="text-link dark" href="https://docs.flap.sh/flap/developers/preview/flap-ai-oracle" target="_blank" rel="noreferrer">Read the Flap AI Oracle specification <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="vault-section" id="vault">
+      <div class="vault-header reveal">
+        <div><p class="micro">HOLDER CONSOLE</p><h2>Your share of the next decision.</h2></div>
+        <div class="network-pill"><span></span>BNB Chain</div>
+      </div>
+      <div class="vault-shell reveal">
+        <aside class="vault-sidebar">
+          <button class="vault-nav active" data-panel="overview"><span>Overview</span><small>01</small></button>
+          <button class="vault-nav" data-panel="decisions"><span>Decisions</span><small>02</small></button>
+          <button class="vault-nav" data-panel="claims"><span>Claims</span><small>03</small></button>
+          <div class="vault-risk"><span>RISK STATUS</span><strong id="riskStatus">Not available</strong><p>Risk data will be read from the verified Flap host context.</p></div>
+        </aside>
+        <div class="vault-content">
+          <div class="vault-panel active" id="panel-overview">
+            <div class="panel-title"><div><span>VAULT OVERVIEW</span><h3>Revenue waits here until Jev decides.</h3></div><span class="epoch-badge">No active epoch</span></div>
+            <div class="metrics-grid">
+              <div class="metric"><span>Vault balance</span><strong>—</strong><small>BNB</small></div>
+              <div class="metric"><span>Your claimable</span><strong>—</strong><small>BNB</small></div>
+              <div class="metric"><span>Eligible supply</span><strong>—</strong><small>JEVS</small></div>
+            </div>
+            <div class="vault-empty"><div class="empty-signal"><i></i><i></i><i></i></div><div><strong>Connect to read the vault</strong><p>Wallet connection reveals your holder position, current epoch, and claimable allocation. No transaction is requested.</p></div><button class="button button-dark secondary-connect" type="button">Connect wallet</button></div>
+          </div>
+          <div class="vault-panel" id="panel-decisions">
+            <div class="panel-title"><div><span>DECISION LEDGER</span><h3>One verifiable record per epoch.</h3></div><span class="epoch-badge">Awaiting vault</span></div>
+            <div class="ledger-head"><span>Epoch</span><span>Policy</span><span>Pool</span><span>Reasoning</span></div>
+            <div class="ledger-empty"><span>—</span><p>No decision records are available until a verified vault address is bound.</p></div>
+          </div>
+          <div class="vault-panel" id="panel-claims">
+            <div class="panel-title"><div><span>CLAIM CENTER</span><h3>Claim what the ledger owes you.</h3></div><span class="epoch-badge">Wallet required</span></div>
+            <div class="claim-card"><div><span>AVAILABLE TO CLAIM</span><strong>— <small>BNB</small></strong></div><button class="button button-coral" id="claimButton" type="button" disabled>Claim allocation</button><p>Claims are enabled only when the wallet, network, verified vault address, and a positive claimable balance are present.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta reveal">
+      <div class="cta-orb" aria-hidden="true"></div>
+      <p class="micro">THE NEXT CREATOR ECONOMY</p>
+      <h2>Revenue can be intelligent<br><em>without becoming opaque.</em></h2>
+      <p>JevShares gives creator communities a distribution system whose choices are bounded, inspectable, and built to resolve on-chain.</p>
+      <a class="button button-primary" href="#vault">Enter the holder console <span>↘</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 7h13v19c0 7-4 11-11 11H7"/><path d="M28 7v12c0 8 3 14 9 18"/><circle cx="35" cy="8" r="3"/></svg><span>Jev<span>Shares</span></span></a>
+    <p>AI-directed creator-fee distribution through Flap vault infrastructure.</p>
+    <div class="footer-links"><a href="#mechanism">Mechanism</a><a href="#proof">Proof</a><a href="https://docs.flap.sh/" target="_blank" rel="noreferrer">Flap docs ↗</a></div>
+    <small>JevShares is an independent product interface built for Flap infrastructure. Contract-derived values remain unavailable until verified deployment addresses are configured.</small>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
