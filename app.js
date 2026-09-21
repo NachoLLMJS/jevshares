@@ -1,7 +1,6 @@
 (() => {
   'use strict';
 
-  const config = window.JEVSHARES_CONFIG || {};
   const policies = {
     steady: {
       kicker: 'Balanced default',
@@ -28,16 +27,6 @@
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const toast = $('#toast');
-  let toastTimer;
-  let account = '';
-
-  function notify(message) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 3400);
-  }
 
   function setPolicy(key) {
     const policy = policies[key];
@@ -68,69 +57,6 @@
     });
   });
 
-  async function ensureChain(provider) {
-    const expectedHex = `0x${Number(config.chainId).toString(16)}`;
-    const current = await provider.request({ method: 'eth_chainId' });
-    if (current.toLowerCase() === expectedHex.toLowerCase()) return true;
-    try {
-      await provider.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: expectedHex }] });
-      return true;
-    } catch (error) {
-      if (error && error.code === 4902) {
-        await provider.request({
-          method: 'wallet_addEthereumChain',
-          params: [{
-            chainId: expectedHex,
-            chainName: config.chainName,
-            nativeCurrency: config.nativeCurrency,
-            rpcUrls: config.rpcUrls,
-            blockExplorerUrls: config.blockExplorerUrls
-          }]
-        });
-        return true;
-      }
-      throw error;
-    }
-  }
-
-  function renderAccount(address) {
-    account = address || '';
-    const label = account ? `${account.slice(0, 6)}…${account.slice(-4)}` : 'Connect wallet';
-    $('#walletLabel').textContent = label;
-    $$('.secondary-connect').forEach((button) => { button.textContent = account ? label : 'Connect wallet'; });
-    document.body.classList.toggle('wallet-connected', Boolean(account));
-  }
-
-  async function connectWallet() {
-    if (!window.ethereum) {
-      notify('No EIP-1193 wallet found. Install a compatible wallet to continue.');
-      return;
-    }
-    try {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      await ensureChain(window.ethereum);
-      renderAccount(accounts[0] || '');
-      notify('Wallet connected. This release establishes account and network context only; contract reads remain disabled.');
-    } catch (error) {
-      const message = error && error.code === 4001 ? 'Wallet request cancelled.' : 'Unable to connect or switch to BNB Chain.';
-      notify(message);
-    }
-  }
-
-  $('#connectWallet').addEventListener('click', connectWallet);
-  $$('.secondary-connect').forEach((button) => button.addEventListener('click', connectWallet));
-
-  if (window.ethereum && typeof window.ethereum.on === 'function') {
-    window.ethereum.on('accountsChanged', (accounts) => renderAccount(accounts[0] || ''));
-    window.ethereum.on('chainChanged', () => {
-      renderAccount('');
-      notify('Network changed. Reconnect to verify the active chain.');
-    });
-  }
-
-  $('#claimButton').addEventListener('click', () => {
-    notify('Claim is unavailable until a verified vault and positive claimable balance are loaded.');
-  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

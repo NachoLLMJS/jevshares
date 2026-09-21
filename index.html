@@ -27,7 +27,6 @@
       <a href="#proof">Proof</a>
       <a href="#vault">Vault</a>
     </nav>
-    <button class="wallet-button" id="connectWallet" type="button"><span class="wallet-dot"></span><span id="walletLabel">Connect wallet</span></button>
   </header>
 
   <main id="top">
@@ -165,7 +164,7 @@
               <div class="metric"><span>Your claimable</span><strong>—</strong><small>BNB</small></div>
               <div class="metric"><span>Eligible supply</span><strong>—</strong><small>JEVS</small></div>
             </div>
-            <div class="vault-empty"><div class="empty-signal"><i></i><i></i><i></i></div><div><strong>Connect your account context</strong><p>Contract reads are not integrated in this release. Connecting establishes the wallet and network context only; balances, epoch state, and claim data remain unavailable.</p></div><button class="button button-dark secondary-connect" type="button">Connect wallet</button></div>
+            <div class="vault-empty"><div class="empty-signal"><i></i><i></i><i></i></div><div><strong>Vault data integration pending</strong><p>Balances, epoch state, holder eligibility, and claim data will appear here once verified ABI-backed reads are integrated.</p></div></div>
           </div>
           <div class="vault-panel" id="panel-decisions">
             <div class="panel-title"><div><span>DECISION LEDGER</span><h3>One verifiable record per epoch.</h3></div><span class="epoch-badge">Awaiting vault</span></div>
@@ -173,8 +172,8 @@
             <div class="ledger-empty"><span>—</span><p>No decision records are available until a verified vault address is bound.</p></div>
           </div>
           <div class="vault-panel" id="panel-claims">
-            <div class="panel-title"><div><span>CLAIM CENTER</span><h3>Claim what the ledger owes you.</h3></div><span class="epoch-badge">Wallet required</span></div>
-            <div class="claim-card"><div><span>AVAILABLE TO CLAIM</span><strong>— <small>BNB</small></strong></div><button class="button button-coral" id="claimButton" type="button" disabled>Claim allocation</button><p>Claims are enabled only when the wallet, network, verified vault address, and a positive claimable balance are present.</p></div>
+            <div class="panel-title"><div><span>CLAIM CENTER</span><h3>Claim what the ledger owes you.</h3></div><span class="epoch-badge">Integration required</span></div>
+            <div class="claim-card"><div><span>AVAILABLE TO CLAIM</span><strong>— <small>BNB</small></strong></div><button class="button button-coral" id="claimButton" type="button" disabled>Claim allocation</button><p>Claims remain disabled until verified vault reads and transaction integration are deployed.</p></div>
           </div>
         </div>
       </div>
@@ -196,7 +195,6 @@
     <small>JevShares is an independent product interface built for Flap infrastructure. Contract-derived values remain unavailable until verified deployment addresses are configured.</small>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="config.js"></script>
   <script src="app.js"></script>
 </body>

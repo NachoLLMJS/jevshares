@@ -18,7 +18,7 @@ Update only `config.js` after deployment:
 - `tokenAddress`
 - `factoryAddress`
 
-The frontend intentionally leaves contract-derived balances, epochs, claimable amounts, and risk status as `—` / unavailable until verified addresses and ABI-backed reads are integrated. Wallet connection is a real click-initiated EIP-1193 flow targeting BNB Chain. Claim submission remains fail-closed.
+The frontend intentionally leaves contract-derived balances, epochs, claimable amounts, and risk status as `—` / unavailable until verified addresses and ABI-backed reads are integrated. No wallet connection or injected-provider access is exposed in this release. Claim submission remains fail-closed.
 
 ## Product model
 
